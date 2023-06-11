@@ -7,6 +7,6 @@ import lombok.Data;
 @AllArgsConstructor
 public class Pollution {
 
-    private double pollutionVolume;
+    private double pollutionSquare;
     private double pollutionDepth;
 }

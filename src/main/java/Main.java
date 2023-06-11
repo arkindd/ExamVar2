@@ -5,7 +5,10 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException, InvalidFormatException {
-        System.out.println(ExcelReader.readRoomsInfo(new File("src/main/resources/RoomsInformation.xlsx")));
-        System.out.println(ExcelReader.readWorksInfo(new File("src/main/resources/WorksInformation.xlsx")));
+        InitInfo info = new InitInfo();
+        info.setRooms(ExcelReader.readRoomsInfo(new File("src/main/resources/RoomsInformation.xlsx")));
+        info.setWorks(ExcelReader.readWorksInfo(new File("src/main/resources/WorksInformation.xlsx")));
+        System.out.println(Calculate.calculates(info));
+
     }
 }
