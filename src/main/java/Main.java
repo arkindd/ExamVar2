@@ -9,6 +9,5 @@ public class Main {
         info.setRooms(ExcelReader.readRoomsInfo(new File("src/main/resources/RoomsInformation.xlsx")));
         info.setWorks(ExcelReader.readWorksInfo(new File("src/main/resources/WorksInformation.xlsx")));
         System.out.println(Calculate.calculates(info));
-
     }
 }
