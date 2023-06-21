@@ -12,13 +12,14 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 public class ExcelReader {
 
-    public static ArrayList<Room> readRoomsInfo(File file) throws IOException, InvalidFormatException {
+    public static ArrayList<Room> readRoomsInfo(InputStream inputStream) throws IOException, InvalidFormatException {
         ArrayList<Room> rooms = new ArrayList<>();
-        XSSFWorkbook book = new XSSFWorkbook(file);
+        XSSFWorkbook book = new XSSFWorkbook(inputStream);
         XSSFSheet sheet = book.getSheetAt(0);
         for (int i = 7; i <= 16; i++) {
             XSSFRow row = sheet.getRow(i);
