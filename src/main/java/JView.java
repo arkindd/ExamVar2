@@ -74,7 +74,9 @@ public class JView extends JFrame {
                 tree1.setModel(model2);
                 costLabel.setText("<no data>");
                 timeLabel.setText("<no data>");
-            } catch (IOException | InvalidFormatException | NullPointerException ex) {
+                collectiveDoseLabel.setText("<no data>");
+                personalDoseLabel.setText("<no data>");
+            } catch (IOException | InvalidFormatException |IllegalStateException| NullPointerException ex) {
                 JOptionPane.showMessageDialog(JView.this, "Ошибка при загрузке файла");
             } catch (IllegalArgumentException exe) {
                 JOptionPane.showMessageDialog(JView.this, "Файл не был выбран");
@@ -88,6 +90,8 @@ public class JView extends JFrame {
                 DecimalFormat formatter = new DecimalFormat("#0.00");
                 costLabel.setText(formatter.format(results.getProjectCost()));
                 timeLabel.setText(formatter.format(results.getProjectTime()));
+                collectiveDoseLabel.setText(formatter.format(results.getCollectiveDose()));
+                personalDoseLabel.setText(formatter.format(results.getPersonalDose()));
                 collectiveHistogramButton.setEnabled(true);
                 personalHistogramButton.setEnabled(true);
             } catch (NumberFormatException exception) {
